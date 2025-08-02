@@ -1,0 +1,24 @@
+<!--
+{% if messages %} 
+    {% for message in messages %} 
+        <div class="alert alert-{{message.tags}}" role="alert"> 
+            {{ message }} 
+        </div> 
+    {% endfor %} 
+{% endif %}
+
+A linha de código acima é a do leo na aula, a abaixo eu coloquei para poder mandar um alerta mesmo na pagina que ta errado!
+
+-->
+
+{% if messages %}
+    <script>
+        {% for message in messages %}
+            alert("{{ message|escapejs }}");
+        {% endfor %}
+    </script>
+{% endif %}
+
+
+
+
