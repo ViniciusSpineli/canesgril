@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False   
 
 #ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['.railway.app','localhost','104.18.11.246', '66.33.22.120','127.0.0.1']
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'churras',
     'funcionario',
     'usuarios',
+    'api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +48,15 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary.forms',
     'cloudinary.models',
+    'rest_framework',
+    'rest_framework_simplejwt',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

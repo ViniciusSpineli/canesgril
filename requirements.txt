@@ -7,5 +7,8 @@ sqlparse
 tzdata
 cloudinary
 django-cloudinary-storage
+djangorestframework
+djangorestframework-simplejwt
+markdown
 whitenoise
 gunicorn
